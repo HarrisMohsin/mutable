@@ -1,0 +1,47 @@
+Dynamic Memory Manipulation in C
+-------------------------------------
+
+In C Programming, all data can be thought of a corresponding 
+piece of memory: `int x` is 4 bytes of memory, `float* p` is an
+8-byte number that holds the address of a 4-byte chunk of memory,
+and `char s[10]` is 10 consecutive 1-byte pieces of memory.
+
+However in C, there are 3 different types of memory: automatic,
+static, and dynamic. Each of these three can be initialized as
+follows:
+
+auto int x    //automatic memory
+
+static int y  //static memory
+
+int* z = (int*)malloc(sizeof(int)); //dynamic memory
+
+You can also declare the existance of a datatype without
+allocating memory for it like so:
+
+extern int wtf; //this definately means what-the-float
+
+Or also declare memory that won't live on the RAM, like
+this:
+
+register int wait_what;
+
+Using static, extern, and register are battles to be fought another
+day, but auto is a battle you should've won by now:
+
+properties of auto:
+ - very fast
+ - always assumed (`int x` is same as `auto int x`)
+ - dies with the function it was declared in
+ - cannot be reallocated
+
+and here is your battle for today:
+
+properties of dynamic:
+ - slow to allocate/reallocate, but just as fast access time
+ - usually from malloc, realloc, or calloc from stdlib.h
+ - can be reallocated
+ - lives until free'd
+ - difficult for noobs to use, but you should be fine
+
+and now refer to dynamic_memory.c on how to use it.
