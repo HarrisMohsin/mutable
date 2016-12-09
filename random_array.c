@@ -5,13 +5,13 @@
 int main()
 {
      
-    char arr[5];
+    int arr[5];
     int i;
  
  
     for (i=0; i<5; i++) {
         char[i] = rand();
-        printf("%s", arr);
+        printf("%i", arr);
  }
  
  
