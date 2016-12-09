@@ -10,8 +10,8 @@ int main()
  
  
     for (i=0; i<5; i++) {
-        char[i] = rand();
-        printf("%i", arr);
+        arr[i] = rand();
+        printf("%i ", arr[i]);
  }
  
  
